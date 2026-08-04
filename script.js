@@ -1,4 +1,4 @@
-(function() {
+(function () {
   const canvas = document.getElementById('petalCanvas');
   const ctx = canvas.getContext('2d');
   let W, H, petals = [];
@@ -10,6 +10,20 @@
     'rgba(255,235,235,alpha)',
     'rgba(248,210,220,alpha)',
   ];
+
+  const ShadowCodedCommissionSettings = {
+    commissionsOpen: true,
+    commissionCurrent: 30
+  };
+
+  document.getElementById("commissionCurrent").textContent =
+    ShadowCodedCommissionSettings.commissionCurrent;
+
+  document.getElementById("commissionStatus").textContent =
+    ShadowCodedCommissionSettings.commissionsOpen ? "OPEN" : "CLOSED";
+
+  document.getElementById("commsBullet").textContent =
+    ShadowCodedCommissionSettings.commissionsOpen ? "‎ ‎ ‎ ‎ 🟢" : "‎ ‎ ‎ ‎ 🔴";
 
   const rand = (a, b) => Math.random() * (b - a) + a;
 
@@ -60,7 +74,7 @@
 })();
 
 
-(function() {
+(function () {
   const els = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
@@ -71,13 +85,13 @@
 })();
 
 
-(function() {
+(function () {
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
 })();
 
 
-(function() {
+(function () {
   const btn = document.getElementById('hamburger');
   const links = document.querySelector('.nav-links');
   if (!btn || !links) return;
@@ -86,7 +100,7 @@
 })();
 
 
-(function() {
+(function () {
   const wm = document.querySelector('.hero-watermark');
   if (!wm) return;
   window.addEventListener('scroll', () => {
@@ -95,12 +109,12 @@
 })();
 
 
-(function() {
+(function () {
   const COLORS = ['#e8a0b4', '#d4aa50', '#f0c8d8', '#b8962e'];
   document.addEventListener('mousemove', e => {
     if (Math.random() > 0.25) return;
     const el = document.createElement('div');
-    el.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:7px;height:7px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%) rotate(45deg);background:${COLORS[Math.floor(Math.random()*COLORS.length)]};opacity:0.7;border-radius:1px;transition:transform 0.55s ease,opacity 0.55s ease;`;
+    el.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:7px;height:7px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%) rotate(45deg);background:${COLORS[Math.floor(Math.random() * COLORS.length)]};opacity:0.7;border-radius:1px;transition:transform 0.55s ease,opacity 0.55s ease;`;
     document.body.appendChild(el);
     requestAnimationFrame(() => {
       el.style.transform = `translate(-50%,-${18 + Math.random() * 22}px) rotate(${Math.random() * 180}deg) scale(0)`;
@@ -109,3 +123,5 @@
     setTimeout(() => el.remove(), 600);
   });
 })();
+
+/*in_the_shadows08 was here*/
