@@ -14,7 +14,7 @@
 <body>
 	<canvas id="petalCanvas"></canvas>
 
-<!-- =========================
+	<!-- =========================
     NAVBAR
 ========================= -->
 
@@ -32,7 +32,7 @@
 		</button>
 	</nav>
 
-<!-- =========================
+	<!-- =========================
     HERO
 ========================= -->
 
@@ -56,7 +56,7 @@
 		<div class="hero-divider"><span class="divider-gem">❧</span></div>
 	</section>
 
-<!-- =========================
+	<!-- =========================
     ABOUT
 ========================= -->
 
@@ -94,7 +94,7 @@
 		</div>
 	</section>
 
-<!-- =========================
+	<!-- =========================
     TRAITS
 ========================= -->
 
@@ -132,7 +132,7 @@
 		</div>
 	</section>
 
-<!-- =========================
+	<!-- =========================
     FAVORITES
 ========================= -->
 
@@ -192,7 +192,7 @@
 		</div>
 	</section>
 
-<!-- =========================
+	<!-- =========================
     COMMISSIONS
 ========================= -->
 
@@ -230,7 +230,7 @@
 		</div>
 	</section>
 
-<!-- =========================
+	<!-- =========================
     QUOTE
 ========================= -->
 
@@ -247,7 +247,7 @@
 		</div>
 	</section>
 
-<!-- =========================
+	<!-- =========================
     CONTACT
 ========================= -->
 
@@ -300,8 +300,29 @@
 		<p class="footer-name">Tama</p>
 	</footer>
 
+	<audio id="music" loop>
+		<source src="assets/bgm.mp3" type="audio/mpeg">
+	</audio>
+
+	<button onclick="playMusic()">Play</button>
+
+	<script>
+		function playMusic() {
+			const music = document.getElementById("music");
+
+			music.play()
+				.then(() => {
+					console.log("Playing!");
+				})
+				.catch(err => {
+					console.log("Failed:", err);
+				});
+		}
+	</script>
+
 	<script src="script.js"></script>
 </body>
+
 </html>
 
 <!--in_the_shadows08 was here-->
