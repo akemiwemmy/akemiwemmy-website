@@ -12,7 +12,7 @@
   ];
 
   const ShadowCodedCommissionSettings = {
-    commissionsOpen: true,
+    commissionsOpen: false,
     commissionCurrent: 30
   };
 
