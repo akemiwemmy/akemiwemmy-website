@@ -1,3 +1,77 @@
+(function () {
+  const canvas = document.getElementById('petalCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, petals = [];
+
+  const COLORS = [
+    'rgba(232,160,180,alpha)',
+    'rgba(255,200,210,alpha)',
+    'rgba(240,220,180,alpha)',
+    'rgba(255,235,235,alpha)',
+    'rgba(248,210,220,alpha)',
+  ];
+
+  const ShadowCodedCommissionSettings = {
+    commissionsOpen: false,
+    commissionCurrent: 30
+  };
+
+  document.getElementById("commissionCurrent").textContent =
+    ShadowCodedCommissionSettings.commissionCurrent;
+
+  document.getElementById("commissionStatus").textContent =
+    ShadowCodedCommissionSettings.commissionsOpen ? "OPEN" : "CLOSED";
+
+  document.getElementById("commsBullet").textContent =
+    ShadowCodedCommissionSettings.commissionsOpen ? "‎ ‎ ‎ ‎ 🟢" : "‎ ‎ ‎ ‎ 🔴";
+
+  const rand = (a, b) => Math.random() * (b - a) + a;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function makePetal() {
+    return {
+      x: rand(0, W), y: rand(-60, -10),
+      size: rand(5, 14), rot: rand(0, Math.PI * 2),
+      rotV: rand(-0.02, 0.02), vx: rand(-0.6, 0.6),
+      vy: rand(0.5, 1.8), alpha: rand(0.25, 0.65),
+      color: COLORS[Math.floor(rand(0, COLORS.length))],
+      sway: rand(0.3, 1.2), swayT: rand(0, Math.PI * 2),
+    };
+  }
+
+  function drawPetal(p) {
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rot);
+    ctx.fillStyle = p.color.replace('alpha', p.alpha);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, p.size * 0.45, p.size, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  resize();
+  petals = Array.from({ length: 28 }, () => { const p = makePetal(); p.y = rand(0, H); return p; });
+
+  (function tick() {
+    ctx.clearRect(0, 0, W, H);
+    petals.forEach((p, i) => {
+      p.swayT += 0.012;
+      p.x += p.vx + Math.sin(p.swayT * p.sway) * 0.4;
+      p.y += p.vy;
+      p.rot += p.rotV;
+      drawPetal(p);
+      if (p.y > H + 20) petals[i] = makePetal();
+    });
+    requestAnimationFrame(tick);
+  })();
+
+  window.addEventListener('resize', resize);
+})();
 
 
 (function () {
