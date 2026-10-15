@@ -141,16 +141,16 @@
 /* =========================
    CLICK IMAGE TO PLAY/PAUSE MUSIC
 ========================= */
-const music = document.getElementById("music");
-const musicImg = document.getElementById("musicToggleImg");
+const bgMusic = document.getElementById("music");
+const toggleImg = document.getElementById("musicToggleImg");
 
-if (musicImg && music) {
-  music.volume = 0.8;
+if (toggleImg && bgMusic) {
+  bgMusic.volume = 0.8;
 
-  musicImg.addEventListener("click", () => {
-    if (music.paused) {
-      music.muted = false;
-      music.play()
+  toggleImg.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.muted = false; // Ensure it's unmuted when playing
+      bgMusic.play()
         .then(() => {
           console.log("Music Playing!");
         })
@@ -158,7 +158,7 @@ if (musicImg && music) {
           console.log("Playback failed:", err);
         });
     } else {
-      music.pause();
+      bgMusic.pause(); // This completely pauses the audio stream
       console.log("Music Paused!");
     }
   });
