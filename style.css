@@ -57,13 +57,14 @@ body {
   justify-content: space-between;
   padding: 0.9rem 3rem;
   background: rgba(255, 255, 255, 0);
-  transition: background 0.4s, box-shadow 0.4s;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Fixed background on scroll with proper transparency */
 #navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 1px 0 var(--border);
-  backdrop-filter: blur(6px);
+  background: rgba(248, 242, 239, 0.95) !important;
+  box-shadow: 0 1px 0 var(--border) !important;
+  backdrop-filter: blur(6px) !important;
 }
 
 .nav-brand {
@@ -1110,7 +1111,7 @@ footer {
   flex-direction: column;
   position: fixed;
   inset: 0;
-  background: rgba(255, 252, 250, 0.97);
+  background: rgba(248, 242, 239, 0.98) !important;
   align-items: center;
   justify-content: center;
   gap: 2rem;
@@ -1265,8 +1266,8 @@ section {
 
 /* Scroll lock when mobile nav is open */
 body.no-scroll {
-  overflow: hidden;
-  height: 100vh;
+  overflow: hidden !important;
+  height: 100vh !important;
 }
 
 /* Music Toggle for Mobile and PC */

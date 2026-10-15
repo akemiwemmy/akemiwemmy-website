@@ -87,7 +87,9 @@
 
 (function () {
   const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
 })();
 
 
@@ -95,7 +97,7 @@
   const wm = document.querySelector('.hero-watermark');
   if (!wm) return;
   window.addEventListener('scroll', () => {
-    wm.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.15}px))`;
+    wm.style.transform = `translate(-50%, calc(-50% + ${window.scrollY * 0.15}px))`;
   }, { passive: true });
 })();
 
