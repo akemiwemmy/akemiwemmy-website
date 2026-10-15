@@ -134,16 +134,21 @@ document.addEventListener("click", () => {
 
 /*in_the_shadows08 was here*/
 
+/* =========================
+   MOBILE MENU & SCROLL LOCK
+========================= */
 (function () {
   const btn = document.getElementById('hamburger');
   const links = document.querySelector('.nav-links');
   if (!btn || !links) return;
 
+  // Toggle open class and body scroll lock on click
   btn.addEventListener('click', () => {
     links.classList.toggle('open');
     document.body.classList.toggle('no-scroll');
   });
 
+  // Close menu and unlock scroll when clicking any nav link
   links.querySelectorAll('a').forEach(a => 
     a.addEventListener('click', () => {
       links.classList.remove('open');
