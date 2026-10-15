@@ -115,14 +115,6 @@
   });
 })();
 
-const music = document.getElementById("music");
-
-document.addEventListener("click", () => {
-    music.muted = false;
-    music.volume = 0.8;
-    music.play();
-}, { once: true });
-
 /*in_the_shadows08 was here*/
 
 /* =========================
@@ -145,3 +137,29 @@ document.addEventListener("click", () => {
     })
   );
 })();
+
+/* =========================
+   CLICK IMAGE TO PLAY/PAUSE MUSIC
+========================= */
+const music = document.getElementById("music");
+const musicImg = document.getElementById("musicToggleImg");
+
+if (musicImg && music) {
+  music.volume = 0.8;
+
+  musicImg.addEventListener("click", () => {
+    if (music.paused) {
+      music.muted = false;
+      music.play()
+        .then(() => {
+          console.log("Music Playing!");
+        })
+        .catch(err => {
+          console.log("Playback failed:", err);
+        });
+    } else {
+      music.pause();
+      console.log("Music Paused!");
+    }
+  });
+}

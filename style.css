@@ -1260,3 +1260,14 @@ body.no-scroll {
   overflow: hidden;
   height: 100vh;
 }
+
+/* Music Toggle for Mobile and PC */
+#musicToggleImg {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#musicToggleImg:hover {
+  transform: scale(1.03);
+  filter: brightness(1.08);
+}
