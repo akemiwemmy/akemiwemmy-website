@@ -69,7 +69,7 @@
 			<div class="about-grid">
 				<div class="about-img-col reveal delay-1">
 					<div class="about-img-frame">
-						<img src="assets/oguri-cap-dance.gif" alt="Mami Tomoe" />
+						<img src="assets/oguri-cap-dance.gif" alt="Mami Tomoe" id="musicToggleImg" style="cursor: pointer;" />
 					</div>
 				</div>
 				<div class="about-text-col reveal delay-2">
@@ -304,29 +304,7 @@
 		<source src="assets/bgm.mp3" type="audio/mpeg">
 	</audio>
 
-	<button onclick="playMusic()">Play</button>
-
-	<script>
-		function playMusic() {
-			const music = document.getElementById("music");
-
-			music.play()
-				.then(() => {
-					console.log("Playing!");
-				})
-				.catch(err => {
-					console.log("Failed:", err);
-				});
-		}
-	</script>
-
 	<script src="script.js"></script>
 </body>
 
 </html>
-
-<div class="about-img-col reveal delay-1">
-    <div class="about-img-frame">
-        <img src="assets/oguri-cap-dance.gif" alt="Mami Tomoe" id="musicToggleImg" style="cursor: pointer;" />
-    </div>
-</div>
