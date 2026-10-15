@@ -13,7 +13,7 @@
 
   const ShadowCodedCommissionSettings = {
     commissionsOpen: false,
-    commissionCurrent: 30
+    commissionCurrent: 17
   };
 
   document.getElementById("commissionCurrent").textContent =
