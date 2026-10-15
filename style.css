@@ -35,6 +35,8 @@ body {
   font-size: 18px;
   line-height: 1.8;
   overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 #petalCanvas {
@@ -726,35 +728,43 @@ cite {
   position: relative;
   width: 80px;
   height: 80px;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: bottom center;
 }
 
 .dc-pfp {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 5px solid #1e1f22;
   object-fit: cover;
   display: block;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s, filter 0.25s;
   cursor: pointer;
-  transform-origin: bottom center;
+  transition: box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.dc-pfp-link:hover .dc-pfp-wrap {
+  transform: translateY(-8px) rotate(-6deg) scale(1.12);
 }
 
 .dc-pfp-link:hover .dc-pfp {
-  transform: translateY(-8px) rotate(-6deg) scale(1.12);
-  box-shadow: 4px -4px 18px rgba(232, 160, 180, 0.35), 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    4px -4px 18px rgba(232, 160, 180, 0.35),
+    0 8px 24px rgba(0, 0, 0, 0.4);
   filter: brightness(1.08);
 }
 
 .dc-status {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
+  bottom: 6px;
+  right: 6px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background: #23a559;
   border: 3px solid #1e1f22;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .dc-body {
@@ -865,7 +875,7 @@ cite {
 
 .findme-layout {
   display: grid;
-  grid-template-columns: 460px 1fr;
+  grid-template-columns: minmax(320px, 460px) 1fr;
   gap: 2.5rem;
   align-items: start;
   max-width: 960px;
@@ -1102,12 +1112,159 @@ footer {
 }
 
 .nav-links.open a {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: var(--text-dark);
+  padding: 0.5rem 0;
 }
 
 #commissions .fav-list-col {
   transform: translate(125px, 75px);
 }
 
-/*in_the_shadows08 was here*/
+@media (max-width: 960px) {
+  #commissions .fav-list-col {
+    transform: none;
+  }
+}
+
+/* in_the_shadows08 was here */
+
+/* MOBILE IMPROVEMENTS
+========================= */
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 960px) {
+
+  #commissions .fav-list-col {
+    transform: none;
+  }
+
+  .nav-links.open a {
+    font-size: 1.2rem;
+  }
+
+  .hero-content {
+    padding: 5rem 1rem 1rem;
+  }
+
+  .hero-panel {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.hero-char-img {
+  max-height: 35vh;
+}
+
+  .section-inner {
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .hero-content {
+    padding: 4.5rem 1rem 1rem;
+  }
+
+  .hero-panel {
+    padding: 1.5rem;
+  }
+
+  .hero-title,
+  .hero-eyebrow,
+  .hero-tagline {
+    text-align: center;
+  }
+
+  .hero-scroll-btn {
+    margin: 0 auto;
+  }
+
+  .about-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .stat {
+    min-width: 100px;
+  }
+
+  .fav-item {
+    gap: 0.75rem;
+    grid-template-columns: 36px 1fr auto;
+  }
+
+  .fav-body h3 {
+    font-size: 0.9rem;
+  }
+
+  .fav-body p {
+    font-size: 0.8rem;
+  }
+
+  .fav-scene-img {
+    max-height: 180px;
+  }
+
+
+@media (max-width: 480px) {
+
+ .discord-card {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+  .dc-body {
+    padding: 52px 14px 14px;
+  }
+
+  .dc-about-text {
+    font-size: 0.82rem;
+  }
+
+  .dc-tags {
+    gap: 4px;
+  }
+
+  .dc-tag {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .about-img-col {
+    max-width: 100%;
+  }
+
+  .quote-art-img {
+    width: 130px;
+  }
+}
+
+/* Better touch-device support */
+
+@media (hover: none) {
+
+  .dc-pfp-link:hover .dc-pfp-wrap {
+    transform: none;
+  }
+
+  .dc-pfp-link:hover .dc-pfp {
+    box-shadow: none;
+    filter: none;
+  }
+
+  .trait-card:hover,
+  .fav-item:hover {
+    transform: none;
+  }
+}
