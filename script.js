@@ -167,32 +167,47 @@ if (toggleImg && bgMusic) {
 }
 
 /* =========================
-   THEME TOGGLE
+   THREE-WAY THEME TOGGLE (Dark -> Light -> Sunset Shimmer)
 ========================= */
 (function () {
   const toggleBtn = document.getElementById('themeToggleBtn');
   const toggleText = document.getElementById('themeToggleText');
   const htmlElement = document.documentElement;
 
-  // Restore saved theme preference from localStorage
+  // Restore saved theme preference from localStorage, default to 'sunset' 
   const savedTheme = localStorage.getItem('site-theme');
-  if (savedTheme === 'dark') {
+  
+  if (savedTheme === 'light') {
+    htmlElement.removeAttribute('data-theme');
+    if (toggleText) toggleText.textContent = 'Light';
+  } else if (savedTheme === 'dark') {
     htmlElement.setAttribute('data-theme', 'dark');
     if (toggleText) toggleText.textContent = 'Dark';
+  } else {
+    // Default fallback to Sunset Shimmer
+    htmlElement.setAttribute('data-theme', 'sunset');
+    if (toggleText) toggleText.textContent = 'Sunset';
   }
 
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       const currentTheme = htmlElement.getAttribute('data-theme');
       
-      if (currentTheme === 'dark') {
+      if (currentTheme === 'sunset') {
+        // Switch from Sunset -> Dark
+        htmlElement.setAttribute('data-theme', 'dark');
+        if (toggleText) toggleText.textContent = 'Dark';
+        localStorage.setItem('site-theme', 'dark');
+      } else if (currentTheme === 'dark') {
+        // Switch from Dark -> Light
         htmlElement.removeAttribute('data-theme');
         if (toggleText) toggleText.textContent = 'Light';
         localStorage.setItem('site-theme', 'light');
       } else {
-        htmlElement.setAttribute('data-theme', 'dark');
-        if (toggleText) toggleText.textContent = 'Dark';
-        localStorage.setItem('site-theme', 'dark');
+        // Switch from Light -> Sunset Shimmer
+        htmlElement.setAttribute('data-theme', 'sunset');
+        if (toggleText) toggleText.textContent = 'Sunset';
+        localStorage.setItem('site-theme', 'sunset');
       }
     });
   }
