@@ -165,3 +165,35 @@ if (toggleImg && bgMusic) {
     }
   });
 }
+
+/* =========================
+   THEME TOGGLE
+========================= */
+(function () {
+  const toggleBtn = document.getElementById('themeToggleBtn');
+  const toggleText = document.getElementById('themeToggleText');
+  const htmlElement = document.documentElement;
+
+  // Restore saved theme preference from localStorage
+  const savedTheme = localStorage.getItem('site-theme');
+  if (savedTheme === 'dark') {
+    htmlElement.setAttribute('data-theme', 'dark');
+    if (toggleText) toggleText.textContent = 'Dark';
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      
+      if (currentTheme === 'dark') {
+        htmlElement.removeAttribute('data-theme');
+        if (toggleText) toggleText.textContent = 'Light';
+        localStorage.setItem('site-theme', 'light');
+      } else {
+        htmlElement.setAttribute('data-theme', 'dark');
+        if (toggleText) toggleText.textContent = 'Dark';
+        localStorage.setItem('site-theme', 'dark');
+      }
+    });
+  }
+})();
