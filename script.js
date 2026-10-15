@@ -134,10 +134,20 @@ document.addEventListener("click", () => {
 
 /*in_the_shadows08 was here*/
 
-const hamburger = document.querySelector('.nav-hamburger');
-const navLinks = document.querySelector('.nav-links');
+(function () {
+  const btn = document.getElementById('hamburger');
+  const links = document.querySelector('.nav-links');
+  if (!btn || !links) return;
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  document.body.classList.toggle('no-scroll');
-});
+  btn.addEventListener('click', () => {
+    links.classList.toggle('open');
+    document.body.classList.toggle('no-scroll');
+  });
+
+  links.querySelectorAll('a').forEach(a => 
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+    })
+  );
+})();
