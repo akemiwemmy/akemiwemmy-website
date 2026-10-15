@@ -37,6 +37,7 @@ body {
   overflow-x: hidden;
   overflow-wrap: break-word;
   word-break: break-word;
+  padding-top: 75px; /* Safely pushes content below fixed navbar */
 }
 
 #petalCanvas {
@@ -47,24 +48,28 @@ body {
 }
 
 #navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 3rem;
-  background: rgba(255, 255, 255, 0);
+  background: rgba(248, 242, 239, 0.95) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  box-shadow: 0 1px 0 var(--border);
   transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Fixed background on scroll with proper transparency */
+/* Always maintains solid background on scroll */
 #navbar.scrolled {
-  background: rgba(248, 242, 239, 0.95) !important;
-  box-shadow: 0 1px 0 var(--border) !important;
-  backdrop-filter: blur(6px) !important;
+  background: rgba(248, 242, 239, 0.98) !important;
+  box-shadow: 0 2px 10px rgba(120, 75, 65, 0.15) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
 .nav-brand {
@@ -125,7 +130,7 @@ body {
   cursor: pointer;
   padding: 4px;
   position: relative;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 .nav-hamburger span {
@@ -139,7 +144,7 @@ body {
 #hero {
   position: relative;
   z-index: 2;
-  min-height: 100vh;
+  min-height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -172,7 +177,7 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
-  padding: 6rem 3rem 2rem;
+  padding: 3rem 3rem 2rem;
 }
 
 .hero-img-wrap {
@@ -1017,7 +1022,7 @@ footer {
   .hero-content {
     flex-direction: column;
     align-items: center;
-    padding-top: 5rem;
+    padding-top: 2rem;
   }
 
   .hero-img-wrap {
@@ -1109,13 +1114,16 @@ footer {
 .nav-links.open {
   display: flex !important;
   flex-direction: column;
-  position: fixed;
-  inset: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
   background: rgba(248, 242, 239, 0.98) !important;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  z-index: 99;
+  z-index: 99998 !important;
 }
 
 .nav-links.open a {
@@ -1152,7 +1160,7 @@ img {
   }
 
   .hero-content {
-    padding: 5rem 1rem 1rem;
+    padding: 2rem 1rem 1rem;
   }
 
   .hero-panel {
