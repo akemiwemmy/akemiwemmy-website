@@ -251,10 +251,10 @@ body {
   flex: 1;
   display: flex;
   align-items: stretch;
-  max-width: 1280px;
+  max-width: 1100px; /* Constrained for comfort on desktop */
   margin: 0 auto;
   width: 100%;
-  padding: 3rem 3rem 2rem;
+  padding: 2.5rem 2rem 1.5rem;
 }
 
 .hero-img-wrap {
@@ -265,7 +265,7 @@ body {
 }
 
 .hero-char-img {
-  max-height: 70vh;
+  max-height: 65vh;
   max-width: 100%;
   object-fit: contain;
   object-position: bottom;
@@ -273,11 +273,11 @@ body {
 }
 
 .hero-panel {
-  flex: 0 0 420px;
+  flex: 0 0 380px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem 2.5rem;
+  padding: 2.5rem 2rem;
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid var(--border);
   border-left: 3px solid var(--gold-light);
@@ -367,7 +367,7 @@ body {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.2rem;
   font-size: 1.8rem;
   color: var(--gold-light);
   opacity: 0.7;
@@ -376,7 +376,7 @@ body {
 section {
   position: relative;
   z-index: 2;
-  padding: 5rem 0;
+  padding: 3.8rem 0; /* Snug, comfortable desktop spacing */
 }
 
 .alt-bg {
@@ -384,14 +384,14 @@ section {
 }
 
 .section-inner {
-  max-width: 1100px;
+  max-width: 960px; /* Constrained width so text paragraphs stay compact and readable */
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 2rem;
 }
 
 .section-head {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .section-title {
@@ -420,14 +420,14 @@ section {
 }
 
 .section-img-row {
-  margin: 2.5rem auto;
+  margin: 2rem auto;
   text-align: center;
-  max-width: 700px;
+  max-width: 650px;
 }
 
 .section-banner-img {
   max-width: 100%;
-  max-height: 260px;
+  max-height: 240px;
   object-fit: contain;
   opacity: 0.85;
   filter: drop-shadow(0 4px 12px var(--shadow));
@@ -470,10 +470,10 @@ section {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
   align-items: start;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .about-img-frame {
@@ -504,9 +504,9 @@ section {
 }
 
 .about-intro {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--text-dark);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .about-intro strong {
@@ -514,15 +514,15 @@ section {
 }
 
 .about-text-col p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .about-stats {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
   border-top: 1px solid var(--border);
 }
 
@@ -535,7 +535,7 @@ section {
 
 .stat-val {
   font-family: 'Cinzel', serif;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: var(--gold);
   font-weight: 600;
 }
@@ -558,14 +558,14 @@ section {
 .traits-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
 }
 
 .trait-card {
   background: var(--white);
   border: 1px solid var(--border);
-  padding: 1.8rem 1.8rem 1.8rem 2.2rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.8rem;
   position: relative;
   border-left: 3px solid var(--gold-light);
   transition: box-shadow 0.3s, transform 0.3s;
@@ -579,7 +579,7 @@ section {
 .trait-icon {
   font-size: 1rem;
   color: var(--gold);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
 .trait-card h3 {
@@ -587,12 +587,12 @@ section {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-dark);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   letter-spacing: 0.05em;
 }
 
 .trait-card p {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-mid);
 }
 
@@ -602,18 +602,18 @@ section {
 
 .favorites-layout {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 2.5rem;
   align-items: start;
 }
 
 .fav-scene-img {
   width: 100%;
-  max-height: 360px;
+  max-height: 320px;
   object-fit: contain;
   filter: drop-shadow(0 4px 16px var(--shadow));
   position: sticky;
-  top: 100px;
+  top: 90px;
 }
 
 .fav-list-col {
@@ -623,10 +623,10 @@ section {
 
 .fav-item {
   display: grid;
-  grid-template-columns: 44px 1fr auto;
+  grid-template-columns: 40px 1fr auto;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1.4rem 0;
+  gap: 1rem;
+  padding: 1.2rem 0;
   border-bottom: 1px solid var(--border);
   transition: background 0.2s, transform 0.2s;
   cursor: default;
@@ -641,8 +641,8 @@ section {
 }
 
 .fav-bullet {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 }
 
@@ -654,23 +654,23 @@ section {
 
 .fav-body h3 {
   font-family: 'Cinzel', serif;
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
   color: var(--text-dark);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .fav-body p {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--text-light);
 }
 
 .fav-arrow {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--gold-light);
   line-height: 1;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border: 1px solid var(--border);
   border-radius: 50%;
   display: flex;
@@ -683,7 +683,7 @@ section {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 220px;
+  grid-auto-rows: 200px;
   gap: 1rem;
 }
 
@@ -734,44 +734,44 @@ section {
 
 #quote {
   background: var(--pale-pink);
-  padding: 6rem 2rem;
+  padding: 4.5rem 2rem;
 }
 
 .quote-inner {
-  max-width: 1000px;
+  max-width: 850px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
 }
 
 .quote-art-img {
-  width: 220px;
+  width: 200px;
   object-fit: contain;
   filter: drop-shadow(0 4px 16px var(--shadow));
 }
 
 .quote-ornament {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--gold-light);
   opacity: 0.6;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   line-height: 1;
 }
 
 blockquote {
-  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
   font-style: italic;
   color: var(--text-dark);
-  line-height: 1.65;
-  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
 cite {
   font-style: normal;
   font-family: 'Raleway', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-light);
@@ -781,7 +781,7 @@ cite {
    DISCORD NITRO: MIDNIGHT BLURPLE CARD STYLING
 ========================================================== */
 .discord-card {
-  max-width: 460px;
+  max-width: 440px;
   margin: 0 auto;
   background: linear-gradient(160deg, #3c4294 0%, #292b45 45%, #1e1f22 100%);
   border-radius: 8px;
@@ -799,7 +799,7 @@ cite {
 
 .dc-banner {
   width: 100%;
-  height: 100px;
+  height: 90px;
   background: linear-gradient(135deg, #2d1b3d 0%, #3a1c2e 50%, #1a1535 100%);
   overflow: hidden;
   position: relative;
@@ -818,8 +818,8 @@ cite {
 
 .dc-pfp-link {
   position: absolute;
-  top: 52px;
-  left: 20px;
+  top: 48px;
+  left: 18px;
   z-index: 10;
   text-decoration: none;
   display: block;
@@ -827,8 +827,8 @@ cite {
 
 .dc-pfp-wrap {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 76px;
+  height: 76px;
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform-origin: bottom center;
 }
@@ -837,7 +837,7 @@ cite {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 5px solid #2e3144;
+  border: 4px solid #2e3144;
   object-fit: cover;
   display: block;
   cursor: pointer;
@@ -861,10 +861,10 @@ cite {
 
 .dc-status {
   position: absolute;
-  bottom: 6px;
-  right: 6px;
-  width: 16px;
-  height: 16px;
+  bottom: 4px;
+  right: 4px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: #23a559;
   border: 3px solid #1e1f22;
@@ -877,7 +877,7 @@ cite {
 }
 
 .dc-body {
-  padding: 52px 18px 18px;
+  padding: 48px 16px 16px;
 }
 
 .dc-name-row {
@@ -889,20 +889,20 @@ cite {
 
 .dc-display-name {
   font-family: 'Cinzel', serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #f2f3f5;
   letter-spacing: 0.04em;
 }
 
 .dc-badge {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #f0b132;
   line-height: 1;
 }
 
 .dc-handle {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: #b5bac1;
   letter-spacing: 0.02em;
 }
@@ -915,36 +915,36 @@ cite {
 .dc-divider {
   height: 1px;
   background: rgba(255, 255, 255, 0.07);
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
 .dc-about-label {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #b5bac1;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .dc-about-text {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: #dbdee1;
-  line-height: 1.55;
+  line-height: 1.5;
   font-family: 'EB Garamond', serif;
 }
 
 .dc-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
 }
 
 .dc-tag {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 3px 8px;
   border-radius: 3px;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -973,150 +973,43 @@ cite {
 
 .about-quote-block {
   border-left: 2px solid var(--border-pink);
-  padding: 0.6rem 1rem;
-  margin: 0.8rem 0 1rem;
+  padding: 0.5rem 0.9rem;
+  margin: 0.7rem 0 0.9rem;
   font-style: italic;
   color: var(--text-mid);
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  line-height: 1.65;
   background: rgba(232, 160, 180, 0.05);
-}
-
-.findme-layout {
-  display: grid;
-  grid-template-columns: minmax(320px, 460px) 1fr;
-  gap: 2.5rem;
-  align-items: start;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.music-panel {
-  background: #1e1f22;
-  border-radius: 8px;
-  padding: 1.6rem 1.6rem 1.4rem;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.22);
-  font-family: 'Raleway', sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-[data-theme="sunset"] .music-panel {
-  background: #2e1f1e;
-}
-
-.music-label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #b5bac1;
-}
-
-.music-note {
-  font-size: 1rem;
-  color: var(--pink);
-  animation: pulseNote 2s ease-in-out infinite;
-}
-
-@keyframes pulseNote {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.15);
-  }
-}
-
-.music-track-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #f2f3f5;
-  letter-spacing: 0.04em;
-  line-height: 1.3;
-}
-
-.music-artist {
-  font-size: 0.78rem;
-  color: #b5bac1;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.3rem;
-}
-
-.sc-embed-wrap {
-  border-radius: 4px;
-  overflow: hidden;
-  background: #111214;
-}
-
-.sc-embed-wrap iframe {
-  display: block;
-}
-
-.music-more-btn {
-  display: inline-block;
-  margin-top: 0.4rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--pink);
-  text-decoration: none;
-  border: 1px solid rgba(232, 160, 180, 0.3);
-  padding: 0.55rem 1.1rem;
-  border-radius: 3px;
-  align-self: flex-start;
-  transition: background 0.25s, color 0.25s, border-color 0.25s;
-}
-
-.music-more-btn:hover {
-  background: rgba(232, 160, 180, 0.12);
-  border-color: var(--pink);
-  color: #f2f3f5;
-}
-
-@media (max-width: 880px) {
-  .findme-layout {
-    grid-template-columns: 1fr;
-    max-width: 460px;
-  }
 }
 
 footer {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 3.5rem 2rem 2.5rem;
+  padding: 3rem 2rem 2rem;
   border-top: 1px solid var(--border);
   background: var(--white);
 }
 
 .footer-ornament {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--gold-light);
   opacity: 0.5;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   line-height: 1;
 }
 
 .footer-name {
   font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   letter-spacing: 0.2em;
   color: var(--text-dark);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 
 .footer-copy {
   font-family: 'Raleway', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   color: var(--text-light);
 }
@@ -1136,7 +1029,7 @@ footer {
   .hero-panel {
     flex: 0 0 auto;
     width: 100%;
-    max-width: 480px;
+    max-width: 460px;
   }
 
   .about-grid {
@@ -1144,7 +1037,7 @@ footer {
   }
 
   .about-img-col {
-    max-width: 340px;
+    max-width: 320px;
     margin: 0 auto;
   }
 
@@ -1153,7 +1046,7 @@ footer {
   }
 
   .fav-scene-img {
-    max-height: 200px;
+    max-height: 180px;
     position: static;
   }
 
@@ -1163,7 +1056,7 @@ footer {
   }
 
   .quote-art-img {
-    width: 160px;
+    width: 150px;
     margin: 0 auto;
   }
 
@@ -1184,7 +1077,7 @@ footer {
   }
 
   .about-quote-block {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
   }
 }
 
@@ -1210,7 +1103,7 @@ footer {
   }
 
   section {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
   }
 }
 
@@ -1281,10 +1174,6 @@ img {
   padding: 0 1rem;
 }
 
-section {
-  padding: 3rem 0;
-}
-
 .hero-panel {
   padding: 1.5rem;
 }
@@ -1329,12 +1218,12 @@ section {
 @media (max-width: 480px) {
   .discord-card {
     width: 100%;
-    max-width: 460px;
+    max-width: 440px;
     margin: 0 auto;
   }
 
   .dc-body {
-    padding: 52px 14px 14px;
+    padding: 46px 14px 14px;
   }
 
   .dc-about-text {
@@ -1355,7 +1244,7 @@ section {
   }
 
   .quote-art-img {
-    width: 130px;
+    width: 120px;
   }
 }
 
@@ -1396,45 +1285,45 @@ body.no-scroll {
 ========================================================== */
 
 .rarity-hero-img {
-  max-height: 70vh !important;
+  max-height: 65vh !important;
 }
 
 .about-toggle-gif {
-  min-height: 340px;
+  min-height: 320px;
   object-fit: cover;
 }
 
 img.section-banner-img.applejack-img,
 .applejack-img {
-  max-height: 150px !important;
-  max-width: 55% !important;
+  max-height: 140px !important;
+  max-width: 50% !important;
   width: auto !important;
-  margin: 1.5rem auto !important;
+  margin: 1.2rem auto !important;
   display: block !important;
   object-fit: contain !important;
 }
 
 img.section-banner-img.fluttershy-img,
 .fluttershy-img {
-  max-height: 420px !important;
+  max-height: 380px !important;
   max-width: 100% !important;
   width: 100% !important;
-  margin: 1.5rem auto !important;
+  margin: 1.2rem auto !important;
   display: block !important;
   object-fit: contain !important;
 }
 
 .favorites-side-gif {
-  max-height: 360px !important;
+  max-height: 320px !important;
 }
 
 .commissions-side-gif {
-  max-height: 360px !important;
+  max-height: 320px !important;
 }
 
 .quote-art-gif {
-  width: 220px !important;
-  max-height: 250px !important;
+  width: 200px !important;
+  max-height: 230px !important;
 }
 
 @media (max-width: 960px) {
@@ -1443,18 +1332,18 @@ img.section-banner-img.fluttershy-img,
   }
 
   .about-toggle-gif {
-    min-height: 260px;
+    min-height: 240px;
   }
 
   img.section-banner-img.applejack-img,
   .applejack-img {
-    max-height: 100px !important;
-    max-width: 75% !important;
+    max-height: 90px !important;
+    max-width: 70% !important;
   }
 
   img.section-banner-img.fluttershy-img,
   .fluttershy-img {
-    max-height: 250px !important;
+    max-height: 220px !important;
   }
 
   .favorites-side-gif {
@@ -1466,6 +1355,6 @@ img.section-banner-img.fluttershy-img,
   }
 
   .quote-art-gif {
-    width: 130px !important;
+    width: 120px !important;
   }
 }
