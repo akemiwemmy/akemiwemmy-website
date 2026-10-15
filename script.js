@@ -133,3 +133,11 @@ document.addEventListener("click", () => {
 }, { once: true });
 
 /*in_the_shadows08 was here*/
+
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  document.body.classList.toggle('no-scroll');
+});
