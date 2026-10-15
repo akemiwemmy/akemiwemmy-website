@@ -167,26 +167,27 @@ if (toggleImg && bgMusic) {
 }
 
 /* =========================
-   THREE-WAY THEME TOGGLE (Dark -> Light -> Sunset Shimmer)
+   THREE-WAY THEME TOGGLE (Sunset -> Dark -> Light)
 ========================= */
 (function () {
   const toggleBtn = document.getElementById('themeToggleBtn');
   const toggleText = document.getElementById('themeToggleText');
   const htmlElement = document.documentElement;
 
-  // Restore saved theme preference from localStorage, default to 'sunset' 
+  // Restore saved theme preference from localStorage, default to 'sunset' if none saved
   const savedTheme = localStorage.getItem('site-theme');
   
-  if (savedTheme === 'light') {
-    htmlElement.removeAttribute('data-theme');
-    if (toggleText) toggleText.textContent = 'Light';
-  } else if (savedTheme === 'dark') {
+  if (savedTheme === 'dark') {
     htmlElement.setAttribute('data-theme', 'dark');
     if (toggleText) toggleText.textContent = 'Dark';
+  } else if (savedTheme === 'light') {
+    htmlElement.removeAttribute('data-theme');
+    if (toggleText) toggleText.textContent = 'Light';
   } else {
-    // Default fallback to Sunset Shimmer
+    // Default to Sunset Shimmer if nothing is saved or if 'sunset' is saved
     htmlElement.setAttribute('data-theme', 'sunset');
     if (toggleText) toggleText.textContent = 'Sunset';
+    localStorage.setItem('site-theme', 'sunset');
   }
 
   if (toggleBtn) {
@@ -204,7 +205,7 @@ if (toggleImg && bgMusic) {
         if (toggleText) toggleText.textContent = 'Light';
         localStorage.setItem('site-theme', 'light');
       } else {
-        // Switch from Light -> Sunset Shimmer
+        // Switch from Light -> Sunset
         htmlElement.setAttribute('data-theme', 'sunset');
         if (toggleText) toggleText.textContent = 'Sunset';
         localStorage.setItem('site-theme', 'sunset');
