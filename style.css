@@ -123,6 +123,8 @@ body {
   border: none;
   cursor: pointer;
   padding: 4px;
+  position: relative;
+  z-index: 1000;
 }
 
 .nav-hamburger span {
@@ -1096,7 +1098,7 @@ footer {
 }
 
 .nav-links.open {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   position: fixed;
   inset: 0;

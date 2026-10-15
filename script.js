@@ -92,15 +92,6 @@
 
 
 (function () {
-  const btn = document.getElementById('hamburger');
-  const links = document.querySelector('.nav-links');
-  if (!btn || !links) return;
-  btn.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-})();
-
-
-(function () {
   const wm = document.querySelector('.hero-watermark');
   if (!wm) return;
   window.addEventListener('scroll', () => {
@@ -142,13 +133,11 @@ document.addEventListener("click", () => {
   const links = document.querySelector('.nav-links');
   if (!btn || !links) return;
 
-  // Toggle open class and body scroll lock on click
   btn.addEventListener('click', () => {
     links.classList.toggle('open');
     document.body.classList.toggle('no-scroll');
   });
 
-  // Close menu and unlock scroll when clicking any nav link
   links.querySelectorAll('a').forEach(a => 
     a.addEventListener('click', () => {
       links.classList.remove('open');
