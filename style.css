@@ -251,7 +251,7 @@ body {
   flex: 1;
   display: flex;
   align-items: stretch;
-  max-width: 1100px; /* Constrained for comfort on desktop */
+  max-width: 1100px;
   margin: 0 auto;
   width: 100%;
   padding: 2.5rem 2rem 1.5rem;
@@ -376,7 +376,7 @@ body {
 section {
   position: relative;
   z-index: 2;
-  padding: 3.8rem 0; /* Snug, comfortable desktop spacing */
+  padding: 3.8rem 0;
 }
 
 .alt-bg {
@@ -384,7 +384,7 @@ section {
 }
 
 .section-inner {
-  max-width: 960px; /* Constrained width so text paragraphs stay compact and readable */
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -1293,12 +1293,21 @@ body.no-scroll {
   object-fit: cover;
 }
 
+/* Applejack wrapper nested inside text column for precise centering under "Equestria" */
+.applejack-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-top: 1.8rem !important;
+  padding-left: 15px !important; /* Fine-tuned nudge to align perfectly under 'Equestria' */
+}
+
 img.section-banner-img.applejack-img,
 .applejack-img {
   max-height: 140px !important;
-  max-width: 50% !important;
+  max-width: 100% !important;
   width: auto !important;
-  margin: 1.2rem auto !important;
   display: block !important;
   object-fit: contain !important;
 }
@@ -1335,10 +1344,16 @@ img.section-banner-img.fluttershy-img,
     min-height: 240px;
   }
 
+  /* Reset Applejack wrapper padding on mobile */
+  .applejack-wrapper {
+    padding-left: 0 !important;
+  }
+
   img.section-banner-img.applejack-img,
   .applejack-img {
     max-height: 90px !important;
     max-width: 70% !important;
+    margin: 1.2rem auto !important;
   }
 
   img.section-banner-img.fluttershy-img,
