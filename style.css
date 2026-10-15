@@ -868,7 +868,7 @@ cite {
   margin: 0.8rem 0 1rem;
   font-style: italic;
   color: var(--text-mid);
-  font-size: 0.97rem;
+  font-size: 1.15rem; /* Increased size for better readability */
   line-height: 1.7;
   background: rgba(232, 160, 180, 0.05);
 }
@@ -1068,6 +1068,10 @@ footer {
 
   .nav-hamburger {
     display: flex;
+  }
+
+  .about-quote-block {
+    font-size: 1.05rem; /* Scaled nicely for mobile */
   }
 }
 
@@ -1270,4 +1274,95 @@ body.no-scroll {
 #musicToggleImg:hover {
   transform: scale(1.03);
   filter: brightness(1.08);
+}
+
+/* ==========================================================
+   MANUAL SIZING CONTROLS FOR ALL SITE GIFS
+   (Adjust max-height / max-width values here whenever you like)
+========================================================== */
+
+/* 1. Hero Section: Rarity Jump GIF */
+.rarity-hero-img {
+  max-height: 70vh !important;
+}
+
+/* 2. About Section: MLP Dance GIF (Music Toggle) */
+.about-toggle-gif {
+  min-height: 340px;
+  object-fit: cover;
+}
+
+/* 3. About Section: Applejack GIF (Set Smaller) */
+img.section-banner-img.applejack-img,
+.applejack-img {
+  max-height: 150px !important;
+  max-width: 55% !important;
+  width: auto !important;
+  margin: 1.5rem auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+/* 4. Traits Section: Fluttershy GIF 2 (Set Prominent/Large) */
+img.section-banner-img.fluttershy-img,
+.fluttershy-img {
+  max-height: 420px !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 1.5rem auto !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+/* 5. Favorites Section: Fluttershy MLP Side GIF */
+.favorites-side-gif {
+  max-height: 360px !important;
+}
+
+/* 6. Commissions Section: Rarity Side GIF */
+.commissions-side-gif {
+  max-height: 360px !important;
+}
+
+/* 7. Quote Section: Rainbow Dash Soccer GIF */
+.quote-art-gif {
+  width: 220px !important;
+  max-height: 250px !important;
+}
+
+
+/* ==========================================================
+   MOBILE RESPONSIVE SIZING FOR ALL GIFS
+========================================================== */
+@media (max-width: 960px) {
+  .rarity-hero-img {
+    max-height: 35vh !important;
+  }
+
+  .about-toggle-gif {
+    min-height: 260px;
+  }
+
+  img.section-banner-img.applejack-img,
+  .applejack-img {
+    max-height: 100px !important;
+    max-width: 75% !important;
+  }
+
+  img.section-banner-img.fluttershy-img,
+  .fluttershy-img {
+    max-height: 250px !important;
+  }
+
+  .favorites-side-gif {
+    max-height: 180px !important;
+  }
+
+  .commissions-side-gif {
+    max-height: 180px !important;
+  }
+
+  .quote-art-gif {
+    width: 130px !important;
+  }
 }

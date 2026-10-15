@@ -149,7 +149,7 @@ if (toggleImg && bgMusic) {
 
   toggleImg.addEventListener("click", () => {
     if (bgMusic.paused) {
-      bgMusic.muted = false; // Ensure it's unmuted when playing
+      bgMusic.muted = false; 
       bgMusic.play()
         .then(() => {
           console.log("Music Playing!");
@@ -158,7 +158,7 @@ if (toggleImg && bgMusic) {
           console.log("Playback failed:", err);
         });
     } else {
-      bgMusic.pause(); // This completely pauses the audio stream
+      bgMusic.pause();
       console.log("Music Paused!");
     }
   });
